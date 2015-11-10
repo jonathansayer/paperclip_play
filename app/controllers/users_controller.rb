@@ -1,14 +1,20 @@
 class UsersController < ApplicationController
 
   def new
+    @user = User.new
   end
 
   def create
-    p "hello"
-    p params[:user]
-    @user = User.create( params[:user] )
+    @user = User.create( user_params )
   end
 
   def show
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:avatar)
+  end
+
 end
