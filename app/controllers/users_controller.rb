@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  def index
+  def new
   end
-  
+
   def create
     p "hello"
     p params[:user]
